@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+
 
 namespace RapidAppProject
 {
@@ -86,6 +88,27 @@ namespace RapidAppProject
                 
 
             }
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Play_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void axWindowsMediaPlayer1_Enter_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = listBox1.SelectedItem.ToString();
         }
     }
 }

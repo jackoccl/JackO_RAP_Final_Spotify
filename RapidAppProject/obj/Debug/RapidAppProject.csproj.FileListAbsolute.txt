@@ -8,3 +8,8 @@ C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidA
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\RapidAppProject.pdb
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\RapidAppProject.exe
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\RapidAppProject.pdb
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\Interop.WMPLib.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\Interop.WMPLib.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.ResolveComReference.cache
