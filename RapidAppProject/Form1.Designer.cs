@@ -36,8 +36,6 @@ namespace RapidAppProject
             this.btn_clearPL = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_loadPL = new System.Windows.Forms.Button();
-            this.btn_Play = new System.Windows.Forms.Button();
-            this.btn_Pause = new System.Windows.Forms.Button();
             this.pb_PlaylistCover = new System.Windows.Forms.PictureBox();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pb_PlaylistCover)).BeginInit();
@@ -102,25 +100,6 @@ namespace RapidAppProject
             this.btn_loadPL.UseVisualStyleBackColor = true;
             this.btn_loadPL.Click += new System.EventHandler(this.btn_loadPL_Click);
             // 
-            // btn_Play
-            // 
-            this.btn_Play.Location = new System.Drawing.Point(28, 396);
-            this.btn_Play.Name = "btn_Play";
-            this.btn_Play.Size = new System.Drawing.Size(75, 23);
-            this.btn_Play.TabIndex = 6;
-            this.btn_Play.Text = " ";
-            this.btn_Play.UseVisualStyleBackColor = true;
-            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
-            // 
-            // btn_Pause
-            // 
-            this.btn_Pause.Location = new System.Drawing.Point(109, 396);
-            this.btn_Pause.Name = "btn_Pause";
-            this.btn_Pause.Size = new System.Drawing.Size(75, 23);
-            this.btn_Pause.TabIndex = 7;
-            this.btn_Pause.Text = "Pause";
-            this.btn_Pause.UseVisualStyleBackColor = true;
-            // 
             // pb_PlaylistCover
             // 
             this.pb_PlaylistCover.Location = new System.Drawing.Point(87, 48);
@@ -146,8 +125,6 @@ namespace RapidAppProject
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pb_PlaylistCover);
-            this.Controls.Add(this.btn_Pause);
-            this.Controls.Add(this.btn_Play);
             this.Controls.Add(this.btn_loadPL);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_clearPL);
@@ -174,8 +151,6 @@ namespace RapidAppProject
         private System.Windows.Forms.Button btn_clearPL;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_loadPL;
-        private System.Windows.Forms.Button btn_Play;
-        private System.Windows.Forms.Button btn_Pause;
         private System.Windows.Forms.PictureBox pb_PlaylistCover;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
