@@ -46,7 +46,7 @@ namespace RapidAppProject
             if (Path.GetExtension(File[0]) == ".mp3" || Path.GetExtension(File[0]) == ".flac")
             {
                 localPlaylist.Songs.Add(new Song(File));
-                PopulateLB();
+                loadPL();
             }
 
             
@@ -70,7 +70,7 @@ namespace RapidAppProject
 
         private void btn_clearPL_Click(object sender, EventArgs e)
         {
-            lbPlaylist.Items.Clear();
+            clearPL();
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace RapidAppProject
                     // List<Song> Songs = JsonConvert.DeserializeObject<List<Song>>(json);
                     localPlaylist = new Playlist(pl.Name, pl.Songs,pl.Cover);
                 }
-                PopulateLB();
+                loadPL();
 
 
 
@@ -149,14 +149,23 @@ namespace RapidAppProject
             axWindowsMediaPlayer1.URL = localPlaylist.Songs[lbPlaylist.SelectedIndex].Location;
 
         }
-        
-        public void PopulateLB()
+
+        public void loadPL()
         {
-            lbPlaylist.Items.Clear();
+            clearPL();
             foreach (Song s in localPlaylist.Songs)
             {
                 lbPlaylist.Items.Add(s.Name);
             }
+            if (localPlaylist.Cover != null)
+            {
+                pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
+            }
+        }
+        public void clearPL()
+        {
+            lbPlaylist.Items.Clear();
+            pb_PlaylistCover.Image = null;
         }
 
         private void btn_AddCover_Click(object sender, EventArgs e)
