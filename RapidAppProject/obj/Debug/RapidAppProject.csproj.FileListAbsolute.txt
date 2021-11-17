@@ -13,3 +13,15 @@ C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidA
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\Interop.WMPLib.dll
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.ResolveComReference.cache
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\System.Text.Json.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\System.Memory.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\System.Buffers.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\RapidAppProject.exe.config
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.CopyComplete
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\Newtonsoft.Json.xml

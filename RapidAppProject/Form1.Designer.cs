@@ -30,28 +30,26 @@ namespace RapidAppProject
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbPlaylist = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_addPL = new System.Windows.Forms.Button();
             this.btn_clearPL = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_loadPL = new System.Windows.Forms.Button();
-            this.btn_Play = new System.Windows.Forms.Button();
-            this.btn_Pause = new System.Windows.Forms.Button();
             this.pb_PlaylistCover = new System.Windows.Forms.PictureBox();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.btn_AddCover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_PlaylistCover)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lbPlaylist
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(430, 8);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(348, 381);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lbPlaylist.FormattingEnabled = true;
+            this.lbPlaylist.Location = new System.Drawing.Point(523, 17);
+            this.lbPlaylist.Name = "lbPlaylist";
+            this.lbPlaylist.Size = new System.Drawing.Size(147, 381);
+            this.lbPlaylist.TabIndex = 0;
+            this.lbPlaylist.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -62,19 +60,9 @@ namespace RapidAppProject
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
-            // btn_addPL
-            // 
-            this.btn_addPL.Location = new System.Drawing.Point(548, 395);
-            this.btn_addPL.Name = "btn_addPL";
-            this.btn_addPL.Size = new System.Drawing.Size(112, 24);
-            this.btn_addPL.TabIndex = 2;
-            this.btn_addPL.Text = "Add to Playlist";
-            this.btn_addPL.UseVisualStyleBackColor = true;
-            this.btn_addPL.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btn_clearPL
             // 
-            this.btn_clearPL.Location = new System.Drawing.Point(430, 395);
+            this.btn_clearPL.Location = new System.Drawing.Point(367, 170);
             this.btn_clearPL.Name = "btn_clearPL";
             this.btn_clearPL.Size = new System.Drawing.Size(112, 24);
             this.btn_clearPL.TabIndex = 3;
@@ -84,7 +72,7 @@ namespace RapidAppProject
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(666, 395);
+            this.btn_Save.Location = new System.Drawing.Point(367, 120);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(112, 24);
             this.btn_Save.TabIndex = 4;
@@ -94,7 +82,7 @@ namespace RapidAppProject
             // 
             // btn_loadPL
             // 
-            this.btn_loadPL.Location = new System.Drawing.Point(666, 425);
+            this.btn_loadPL.Location = new System.Drawing.Point(367, 75);
             this.btn_loadPL.Name = "btn_loadPL";
             this.btn_loadPL.Size = new System.Drawing.Size(112, 24);
             this.btn_loadPL.TabIndex = 5;
@@ -102,58 +90,48 @@ namespace RapidAppProject
             this.btn_loadPL.UseVisualStyleBackColor = true;
             this.btn_loadPL.Click += new System.EventHandler(this.btn_loadPL_Click);
             // 
-            // btn_Play
-            // 
-            this.btn_Play.Location = new System.Drawing.Point(28, 396);
-            this.btn_Play.Name = "btn_Play";
-            this.btn_Play.Size = new System.Drawing.Size(75, 23);
-            this.btn_Play.TabIndex = 6;
-            this.btn_Play.Text = " ";
-            this.btn_Play.UseVisualStyleBackColor = true;
-            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
-            // 
-            // btn_Pause
-            // 
-            this.btn_Pause.Location = new System.Drawing.Point(109, 396);
-            this.btn_Pause.Name = "btn_Pause";
-            this.btn_Pause.Size = new System.Drawing.Size(75, 23);
-            this.btn_Pause.TabIndex = 7;
-            this.btn_Pause.Text = "Pause";
-            this.btn_Pause.UseVisualStyleBackColor = true;
-            // 
             // pb_PlaylistCover
             // 
-            this.pb_PlaylistCover.Location = new System.Drawing.Point(87, 48);
+            this.pb_PlaylistCover.Location = new System.Drawing.Point(19, 44);
             this.pb_PlaylistCover.Name = "pb_PlaylistCover";
-            this.pb_PlaylistCover.Size = new System.Drawing.Size(196, 178);
+            this.pb_PlaylistCover.Size = new System.Drawing.Size(308, 268);
             this.pb_PlaylistCover.TabIndex = 8;
             this.pb_PlaylistCover.TabStop = false;
+            this.pb_PlaylistCover.Click += new System.EventHandler(this.pb_PlaylistCover_Click);
             // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(28, 342);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(19, 336);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(308, 33);
             this.axWindowsMediaPlayer1.TabIndex = 9;
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter_1);
             // 
+            // btn_AddCover
+            // 
+            this.btn_AddCover.Location = new System.Drawing.Point(19, 384);
+            this.btn_AddCover.Name = "btn_AddCover";
+            this.btn_AddCover.Size = new System.Drawing.Size(112, 24);
+            this.btn_AddCover.TabIndex = 10;
+            this.btn_AddCover.Text = "Add Cover";
+            this.btn_AddCover.UseVisualStyleBackColor = true;
+            this.btn_AddCover.Click += new System.EventHandler(this.btn_AddCover_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(698, 420);
+            this.Controls.Add(this.btn_AddCover);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pb_PlaylistCover);
-            this.Controls.Add(this.btn_Pause);
-            this.Controls.Add(this.btn_Play);
             this.Controls.Add(this.btn_loadPL);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_clearPL);
-            this.Controls.Add(this.btn_addPL);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbPlaylist);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -168,16 +146,14 @@ namespace RapidAppProject
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbPlaylist;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_addPL;
         private System.Windows.Forms.Button btn_clearPL;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_loadPL;
-        private System.Windows.Forms.Button btn_Play;
-        private System.Windows.Forms.Button btn_Pause;
         private System.Windows.Forms.PictureBox pb_PlaylistCover;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Button btn_AddCover;
     }
 }
 
