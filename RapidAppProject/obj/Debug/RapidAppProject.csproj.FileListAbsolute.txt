@@ -25,3 +25,30 @@ C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidA
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.CopyComplete
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\Newtonsoft.Json.dll
 C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject\RapidAppProject\bin\Debug\Newtonsoft.Json.xml
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\RapidAppProject.exe.config
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\RapidAppProject.exe
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\RapidAppProject.pdb
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\Newtonsoft.Json.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\System.Text.Json.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\System.Memory.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\System.Text.Encodings.Web.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\System.Numerics.Vectors.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\System.Buffers.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\Newtonsoft.Json.xml
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\Interop.WMPLib.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\bin\Debug\AxInterop.WMPLib.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.AssemblyReference.cache
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.exe.config
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\Interop.WMPLib.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\AxInterop.WMPLib.dll
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.ResolveComReference.cache
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.Form1.resources
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.Properties.Resources.resources
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.GenerateResource.cache
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.CoreCompileInputs.cache
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.csproj.CopyComplete
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.exe
+C:\BowValley\SODV2101-Rapid_Application_Development\GitProject\RapidAppProject\obj\Debug\RapidAppProject.pdb

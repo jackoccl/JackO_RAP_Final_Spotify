@@ -12,6 +12,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
 using Newtonsoft.Json;
+using WMPLib;
+using AxWMPLib;
 
 namespace RapidAppProject
 {
@@ -30,6 +32,37 @@ namespace RapidAppProject
 
             this.AllowDrop = true;
 
+
+            Panel container = new Panel()
+            {
+                Parent = this,
+                Width = 320,
+                Height = 230 + 40,
+                AllowDrop = true,
+                Left = (this.Width - 170) / 2,
+                Top = (this.Height - 380 - 40) / 2,
+            };
+            AxWindowsMediaPlayer player = new AxWindowsMediaPlayer()
+            {
+                AllowDrop = false,
+                Dock = DockStyle.Fill,
+            };
+            container.Controls.Add(player);
+            container.DragEnter += (s, e) =>
+            {
+                if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                    e.Effect = DragDropEffects.Copy;
+            };
+            container.DragDrop += (s, e) =>
+            {
+                if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                {
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                    var file = files.FirstOrDefault();
+                    if (!string.IsNullOrWhiteSpace(file))
+                        player.URL = file;
+                }
+            };
         }
 
         private void Form1_Load(object sender, EventArgs e)

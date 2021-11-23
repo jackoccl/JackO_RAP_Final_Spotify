@@ -1,0 +1,14 @@
+{
+  "Songs": [
+    {
+      "Name": "mp3_example",
+      "Location": "C:\\BowValley\\SODV2101-Rapid_Application_Development\\MediaPlayer\\mp3_example.mp3"
+    },
+    {
+      "Name": "mp3_example",
+      "Location": "C:\\BowValley\\SODV2101-Rapid_Application_Development\\MediaPlayer\\mp3_example.mp3"
+    }
+  ],
+  "Name": null,
+  "Cover": "C:\\BowValley\\SODV2101-Rapid_Application_Development\\MediaPlayer\\autumn1.jpg"
+}
