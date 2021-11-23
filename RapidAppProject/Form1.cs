@@ -33,6 +33,8 @@ namespace RapidAppProject
             this.AllowDrop = true;
 
 
+
+            // Creation of a new panel according to the following sizes and placement
             Panel container = new Panel()
             {
                 Parent = this,
@@ -42,6 +44,8 @@ namespace RapidAppProject
                 Left = (this.Width - 170) / 2,
                 Top = (this.Height - 380 - 40) / 2,
             };
+
+            // Creation of a new player using AxWMPLib library with its properties
             AxWindowsMediaPlayer player = new AxWindowsMediaPlayer()
             {
                 AllowDrop = false,
@@ -53,6 +57,8 @@ namespace RapidAppProject
                 if (e.Data.GetDataPresent(DataFormats.FileDrop))
                     e.Effect = DragDropEffects.Copy;
             };
+
+            // Implementation of drag and drop functionality
             container.DragDrop += (s, e) =>
             {
                 if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -64,6 +70,8 @@ namespace RapidAppProject
                 }
             };
         }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
