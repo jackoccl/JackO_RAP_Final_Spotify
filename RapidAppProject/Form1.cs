@@ -14,17 +14,22 @@ using System.IO;
 using Newtonsoft.Json;
 using WMPLib;
 using AxWMPLib;
+using SpotifyAPI.Web;
 
 namespace RapidAppProject
 {
 
     public partial class Form1 : Form
     {
+        public SpotifyClient spotify;
+
         List<string[]> FileList = new List<string[]>(); // manages drag and drop files
         Playlist localPlaylist = new Playlist(); // playlist are loaded into and from this playlist.
         public Form1()
         {
             InitializeComponent();
+
+
 
             string folderName = @"c:\Rapid Music";
             string pathString = System.IO.Path.Combine(folderName, "My Files"); // drag drop will save files here. List box will read mp3s from the dir
@@ -137,7 +142,7 @@ namespace RapidAppProject
             }
         }
 
-        private void btn_loadPL_Click(object sender, EventArgs e)
+        private async void btn_loadPL_Click(object sender, EventArgs e)
         {
             lbPlaylist.Items.Clear();
             OpenFileDialog ofd = new OpenFileDialog();
@@ -150,6 +155,8 @@ namespace RapidAppProject
                     Playlist pl = JsonConvert.DeserializeObject<Playlist>(json);
                     // List<Song> Songs = JsonConvert.DeserializeObject<List<Song>>(json);
                     localPlaylist = new Playlist(pl.Name, pl.Songs,pl.Cover);
+
+
                 }
                 loadPL();
 
@@ -185,9 +192,13 @@ namespace RapidAppProject
             
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private async void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.URL = localPlaylist.Songs[lbPlaylist.SelectedIndex].Location;
+
+            pb_PlaylistCover.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb_PlaylistCover.ImageLocation = localPlaylist.Songs[lbPlaylist.SelectedIndex].Cover;
+
 
         }
 
@@ -200,11 +211,13 @@ namespace RapidAppProject
             }
             if (localPlaylist.Cover != null)
             {
-                pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
+                //pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
             }
         }
         public void clearPL()
         {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            FileList.Clear();
             lbPlaylist.Items.Clear();
             pb_PlaylistCover.Image = null;
         }
@@ -217,7 +230,7 @@ namespace RapidAppProject
                 if(Path.GetExtension(ofd.FileName) == ".png" || Path.GetExtension(ofd.FileName) == ".jpg")
                 {
                     localPlaylist.Cover = ofd.FileName;
-                    pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
+                    //pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
                 }
             }
         }
