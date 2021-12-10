@@ -116,6 +116,7 @@ namespace RapidAppProject
 
         private void btn_clearPL_Click(object sender, EventArgs e)
         {
+            localPlaylist.Songs.Clear();
             clearPL();
         }
 
@@ -159,10 +160,6 @@ namespace RapidAppProject
 
                 }
                 loadPL();
-
-
-
-
 
                 //var file = new System.IO.StreamReader(ofd.FileName);
                 //string line;
@@ -219,6 +216,7 @@ namespace RapidAppProject
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             FileList.Clear();
             lbPlaylist.Items.Clear();
+            
             pb_PlaylistCover.Image = null;
         }
 
