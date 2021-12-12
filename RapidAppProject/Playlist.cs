@@ -14,6 +14,8 @@ namespace RapidAppProject
    
     public class Playlist
     {
+        SpotifyClient spotify;
+  
         public string Name { get; set; } // playlist name
         public List<Song> Songs = new List<Song>();
         public string Cover { get; set; } 
@@ -92,10 +94,16 @@ namespace RapidAppProject
             {
                 Name = Path.ChangeExtension(FileName, null);
             }
-
-
             Console.WriteLine(Name);
             Console.WriteLine(Artist);
+
+
+
+
+
+
+
+
 
         }
         
