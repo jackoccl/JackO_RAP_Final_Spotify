@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.IO;
 using Newtonsoft.Json;
 using WMPLib;
@@ -131,18 +130,10 @@ namespace RapidAppProject
                 {
                     sw.Write(json);
                 }
-                //MessageBox.Show(" Saved! ");
-                //lbPlaylist.Items.Clear();
-                //using (var sw = new System.IO.StreamWriter(sfd.FileName, false))
-                //{
-                //    foreach (var items in lbPlaylist.Items)
-                //        sw.Write(items.ToString() + Environment.NewLine);
-                //    MessageBox.Show("Saved");
-                //}
             }
         }
 
-        private async void btn_loadPL_Click(object sender, EventArgs e)
+        private void btn_loadPL_Click(object sender, EventArgs e)
         {
             lbPlaylist.Items.Clear();
             OpenFileDialog ofd = new OpenFileDialog();
