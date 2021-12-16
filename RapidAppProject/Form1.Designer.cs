@@ -116,7 +116,6 @@ namespace RapidAppProject
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(300, 30);
             this.axWindowsMediaPlayer1.TabIndex = 9;
-            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter_1);
             // 
             // btnShuffle
             // 
@@ -202,7 +201,6 @@ namespace RapidAppProject
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pb_PlaylistCover)).EndInit();

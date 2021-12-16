@@ -64,7 +64,7 @@ namespace RapidAppProject
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             FileList.Clear();
             lbPlaylist.Items.Clear();
-            localPlaylist.Songs.Clear();
+            
             pb_PlaylistCover.Image = null;
         }
         public void setCover(object Sender, SpotifyData data)
