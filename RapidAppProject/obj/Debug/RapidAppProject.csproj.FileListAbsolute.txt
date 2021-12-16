@@ -83,32 +83,3 @@ D:\Software Development\Sem 3\Rapid App Development\Project\RapidAppProject-main
 D:\Software Development\Sem 3\Rapid App Development\Project\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csproj.GenerateResource.cache
 D:\Software Development\Sem 3\Rapid App Development\Project\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csproj.CoreCompileInputs.cache
 D:\Software Development\Sem 3\Rapid App Development\Project\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csproj.CopyComplete
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\RapidAppProject.exe.config
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\RapidAppProject.exe
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\RapidAppProject.pdb
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\Newtonsoft.Json.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\SpotifyAPI.Web.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\System.Text.Json.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\System.Memory.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\System.Buffers.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\Newtonsoft.Json.xml
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\SpotifyAPI.Web.xml
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\Interop.WMPLib.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csprojAssemblyReference.cache
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.exe.config
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\Interop.WMPLib.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\AxInterop.WMPLib.dll
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csproj.ResolveComReference.cache
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.Form1.resources
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.Properties.Resources.resources
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csproj.GenerateResource.cache
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csproj.CoreCompileInputs.cache
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.csproj.CopyComplete
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.exe
-C:\Users\jacko\Documents\Bow Valley\3rd Semester\RapidApp\RapidAppProject-main\RapidAppProject-main\RapidAppProject\obj\Debug\RapidAppProject.pdb
