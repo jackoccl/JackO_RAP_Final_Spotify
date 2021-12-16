@@ -14,18 +14,14 @@ namespace RapidAppProject
    
     public class Playlist
     {
-        SpotifyClient spotify;
-  
-        public string Name { get; set; } // playlist name
         public List<Song> Songs = new List<Song>();
         public string Cover { get; set; } 
         public Playlist()
         {
 
         }
-        public Playlist(string name, List<Song> songs, string cover)
+        public Playlist(List<Song> songs, string cover)
         {
-            Name = name;
             Songs = songs;
             Cover = cover;
         }
@@ -35,6 +31,8 @@ namespace RapidAppProject
 
     public class Song
     {
+        public event EventHandler<SpotifyData> UpdateCover;
+
         public string Name { get; set; }
         public string Artist { get; set; } = "";
         public string Location { get; set; }
@@ -49,6 +47,7 @@ namespace RapidAppProject
             Location = File[0];
             getName(Location);
             setCover();
+ 
         }
         public async void setCover()
         {
@@ -60,13 +59,12 @@ namespace RapidAppProject
 
             string query = $"{Name} {Artist}";
 
-           // Console.WriteLine(query);
-
             var search = await spotify.Search.Item(new SearchRequest(SearchRequest.Types.All, query));
 
             try
             {
                 Cover = search.Tracks.Items.First().Album.Images.First().Url;
+                UpdateCover.Invoke(this, new SpotifyData(Cover));
             }
             catch
             {
@@ -83,7 +81,7 @@ namespace RapidAppProject
             string FileName = Path.GetFileName(filepath);
 
             FileName = FileName.Replace('_', ' ');
-            // Console.WriteLine(FileName);
+
             if (rx.Matches(FileName).Count > 0)
             {
                

@@ -21,62 +21,56 @@ namespace RapidAppProject
 
     public partial class Form1 : Form
     {
-        public SpotifyClient spotify;
 
         List<string[]> FileList = new List<string[]>(); // manages drag and drop files
         Playlist localPlaylist = new Playlist(); // playlist are loaded into and from this playlist.
+        public string folderName = @"c:\Rapid Music";
         public Form1()
         {
             InitializeComponent();
 
+            pb_PlaylistCover.SizeMode = PictureBoxSizeMode.StretchImage;
 
-
-            string folderName = @"c:\Rapid Music";
-            string pathString = System.IO.Path.Combine(folderName, "My Files"); // drag drop will save files here. List box will read mp3s from the dir
-            System.IO.Directory.CreateDirectory(pathString);
+            
+            System.IO.Directory.CreateDirectory(folderName);
 
             this.AllowDrop = true;
 
 
+        }
+        public static void OnTaskCompleted()
+        {
 
-            // Creation of a new panel according to the following sizes and placement
-            Panel container = new Panel()
-            {
-                Parent = this,
-                Width = 320,
-                Height = 230 + 40,
-                AllowDrop = true,
-                Left = (this.Width + 150) / 2,
-                Top = (this.Height - 380 - 40) / 2,
-            };
-
-            // Creation of a new player using AxWMPLib library with its properties
-            AxWindowsMediaPlayer player = new AxWindowsMediaPlayer()
-            {
-                AllowDrop = false,
-                Dock = DockStyle.Fill,
-            };
-            container.Controls.Add(player);
-            container.DragEnter += (s, e) =>
-            {
-                if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                    e.Effect = DragDropEffects.Copy;
-            };
-
-            // Implementation of drag and drop functionality
-            container.DragDrop += (s, e) =>
-            {
-                if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                {
-                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                    var file = files.FirstOrDefault();
-                    if (!string.IsNullOrWhiteSpace(file))
-                        player.URL = file;
-                }
-            };
         }
 
+        public void loadPL()
+        {
+            clearPL();
+            Song last;
+            foreach (Song s in localPlaylist.Songs)
+            {
+                lbPlaylist.Items.Add(s.Name);
+                last = s;
+                pb_PlaylistCover.ImageLocation = last.Cover;
+            }
 
+            Console.WriteLine(localPlaylist.Songs.First().Cover);
+
+
+            
+        }
+        public void clearPL()
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            FileList.Clear();
+            lbPlaylist.Items.Clear();
+            localPlaylist.Songs.Clear();
+            pb_PlaylistCover.Image = null;
+        }
+        public void setCover(object Sender, SpotifyData data)
+        {
+            pb_PlaylistCover.ImageLocation = data.cover;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -91,18 +85,15 @@ namespace RapidAppProject
             string[] File = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             if (Path.GetExtension(File[0]) == ".mp3" || Path.GetExtension(File[0]) == ".flac")
             {
-                localPlaylist.Songs.Add(new Song(File));
+                Song s = new Song(File);
+                s.UpdateCover += setCover;
+
+                localPlaylist.Songs.Add(s);
                 loadPL();
             }
 
-            
-            //FileList.Add(File);
-            //lbPlaylist.Items.Clear();
-            //for (int i = 0; i < FileList.Count; i++)
-            //{
-            //    lbPlaylist.Items.Add(FileList[i][0]);
-            //}
         }
+
 
         private void Form1_DragEnter(object sender, DragEventArgs e)
         {
@@ -122,6 +113,7 @@ namespace RapidAppProject
         private void btn_Save_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = folderName;
             sfd.Filter = "JSON (*.json)|*.json";
             if(sfd.ShowDialog() == DialogResult.OK)
             {
@@ -131,45 +123,26 @@ namespace RapidAppProject
                 {
                     sw.Write(json);
                 }
-                //MessageBox.Show(" Saved! ");
-                //lbPlaylist.Items.Clear();
-                //using (var sw = new System.IO.StreamWriter(sfd.FileName, false))
-                //{
-                //    foreach (var items in lbPlaylist.Items)
-                //        sw.Write(items.ToString() + Environment.NewLine);
-                //    MessageBox.Show("Saved");
-                //}
+
             }
         }
 
-        private async void btn_loadPL_Click(object sender, EventArgs e)
+        private void btn_loadPL_Click(object sender, EventArgs e)
         {
             lbPlaylist.Items.Clear();
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = folderName;
             if(ofd.ShowDialog() == DialogResult.OK)
             {
-                //var file = new System.IO.StreamReader(ofd.FileName);
                 using(StreamReader reader = new StreamReader(ofd.FileName))
                 {
                     string json = reader.ReadToEnd();
                     Playlist pl = JsonConvert.DeserializeObject<Playlist>(json);
-                    // List<Song> Songs = JsonConvert.DeserializeObject<List<Song>>(json);
-                    localPlaylist = new Playlist(pl.Name, pl.Songs,pl.Cover);
+                    localPlaylist = new Playlist( pl.Songs,pl.Cover);
 
 
                 }
-                loadPL();
 
-
-
-
-
-                //var file = new System.IO.StreamReader(ofd.FileName);
-                //string line;
-                //while((line = file.ReadLine())!= null)
-                //{
-                //    lbPlaylist.Items.Add(line);
-                //}
 
 
             }
@@ -192,35 +165,24 @@ namespace RapidAppProject
             
         }
 
-        private async void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.URL = localPlaylist.Songs[lbPlaylist.SelectedIndex].Location;
-
-            pb_PlaylistCover.SizeMode = PictureBoxSizeMode.StretchImage;
-            pb_PlaylistCover.ImageLocation = localPlaylist.Songs[lbPlaylist.SelectedIndex].Cover;
-
-
-        }
-
-        public void loadPL()
-        {
-            clearPL();
-            foreach (Song s in localPlaylist.Songs)
+            try
             {
-                lbPlaylist.Items.Add(s.Name);
+                axWindowsMediaPlayer1.URL = localPlaylist.Songs[lbPlaylist.SelectedIndex].Location;
+
+
+                pb_PlaylistCover.ImageLocation = localPlaylist.Songs[lbPlaylist.SelectedIndex].Cover;
             }
-            if (localPlaylist.Cover != null)
+            catch
             {
-                //pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
+
             }
+
+
         }
-        public void clearPL()
-        {
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
-            FileList.Clear();
-            lbPlaylist.Items.Clear();
-            pb_PlaylistCover.Image = null;
-        }
+
+
 
         private void btn_AddCover_Click(object sender, EventArgs e)
         {
@@ -230,7 +192,7 @@ namespace RapidAppProject
                 if(Path.GetExtension(ofd.FileName) == ".png" || Path.GetExtension(ofd.FileName) == ".jpg")
                 {
                     localPlaylist.Cover = ofd.FileName;
-                    //pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
+                    pb_PlaylistCover.Image = System.Drawing.Image.FromFile(localPlaylist.Cover);
                 }
             }
         }
