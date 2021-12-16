@@ -30,16 +30,13 @@ namespace RapidAppProject
             InitializeComponent();
 
             pb_PlaylistCover.SizeMode = PictureBoxSizeMode.StretchImage;
-
+            axWindowsMediaPlayer1.settings.volume = 10;
+          
             
             System.IO.Directory.CreateDirectory(folderName);
 
             this.AllowDrop = true;
 
-
-        }
-        public static void OnTaskCompleted()
-        {
 
         }
 
@@ -52,6 +49,7 @@ namespace RapidAppProject
                 lbPlaylist.Items.Add(s.Name);
                 last = s;
                 pb_PlaylistCover.ImageLocation = last.Cover;
+                axWindowsMediaPlayer1.URL = s.Location;
             }
 
             Console.WriteLine(localPlaylist.Songs.First().Cover);
@@ -66,6 +64,11 @@ namespace RapidAppProject
             lbPlaylist.Items.Clear();
             
             pb_PlaylistCover.Image = null;
+        }
+        public void Reset()
+        {
+            clearPL();
+            localPlaylist.Songs.Clear();
         }
         public void setCover(object Sender, SpotifyData data)
         {
@@ -107,7 +110,7 @@ namespace RapidAppProject
 
         private void btn_clearPL_Click(object sender, EventArgs e)
         {
-            clearPL();
+            Reset();
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -139,26 +142,14 @@ namespace RapidAppProject
                     string json = reader.ReadToEnd();
                     Playlist pl = JsonConvert.DeserializeObject<Playlist>(json);
                     localPlaylist = new Playlist( pl.Songs,pl.Cover);
-
-
                 }
-
-
+                loadPL();
 
             }
            
         }
 
-        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btn_Play_Click(object sender, EventArgs e)
-        {
-            
-
-        }
 
         private void axWindowsMediaPlayer1_Enter_1(object sender, EventArgs e)
         {
@@ -206,58 +197,73 @@ namespace RapidAppProject
         {
             Random random = new Random();
             int w = localPlaylist.Songs.Count;
+            if (lbPlaylist.Items.Count > 0)
+            {
+                while (w > 1)
+                {
+                    w--;
+                    int u = random.Next(w + 1);
+                    Song value = localPlaylist.Songs[u];
+                    localPlaylist.Songs[u] = localPlaylist.Songs[w];
+                    localPlaylist.Songs[w] = value;
+                }
 
-            while (w > 1)
-            {
-                w--;
-                int u = random.Next(w + 1);
-                Song value = localPlaylist.Songs[u];
-                localPlaylist.Songs[u] = localPlaylist.Songs[w];
-                localPlaylist.Songs[w] = value;
+                clearPL();
+                foreach (Song s in localPlaylist.Songs)
+                {
+                    lbPlaylist.Items.Add(s.Name);
+                }
+                if (localPlaylist.Cover != null)
+                {
+                    //pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
+                }
+                pb_PlaylistCover.ImageLocation = localPlaylist.Songs.First().Cover;
+
             }
 
-            clearPL();
-            foreach (Song s in localPlaylist.Songs)
-            {
-                lbPlaylist.Items.Add(s.Name);
-            }
-            if (localPlaylist.Cover != null)
-            {
-                //pb_PlaylistCover.Image = Image.FromFile(localPlaylist.Cover);
-            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if(lbPlaylist.SelectedIndex != 0)
+            if(lbPlaylist.Items.Count > 0)
             {
-                axWindowsMediaPlayer1.Ctlcontrols.stop();
-                lbPlaylist.SelectedIndex--;
-                axWindowsMediaPlayer1.Ctlcontrols.play();
-            }
-            else
-            {
-                axWindowsMediaPlayer1.Ctlcontrols.stop();
-                lbPlaylist.SelectedIndex = localPlaylist.Songs.Count - 1;
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                if (lbPlaylist.SelectedIndex != 0)
+                {
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
+                    lbPlaylist.SelectedIndex--;
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                else
+                {
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
+                    lbPlaylist.SelectedIndex = localPlaylist.Songs.Count - 1;
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                pb_PlaylistCover.ImageLocation = localPlaylist.Songs[lbPlaylist.SelectedIndex].Cover;
             }
 
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (lbPlaylist.SelectedIndex != localPlaylist.Songs.Count - 1)
+            if (lbPlaylist.Items.Count > 0)
             {
-                axWindowsMediaPlayer1.Ctlcontrols.stop();
-                lbPlaylist.SelectedIndex++;
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                if (lbPlaylist.SelectedIndex != localPlaylist.Songs.Count - 1)
+                {
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
+                    lbPlaylist.SelectedIndex++;
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                else
+                {
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
+                    lbPlaylist.SelectedIndex = 0;
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                pb_PlaylistCover.ImageLocation = localPlaylist.Songs[lbPlaylist.SelectedIndex].Cover;
             }
-            else
-            {
-                axWindowsMediaPlayer1.Ctlcontrols.stop();
-                lbPlaylist.SelectedIndex = 0;
-                axWindowsMediaPlayer1.Ctlcontrols.play();
-            }
+
+
         }
     }
 }

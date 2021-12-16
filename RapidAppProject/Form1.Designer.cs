@@ -50,13 +50,13 @@ namespace RapidAppProject
             // lbPlaylist
             // 
             this.lbPlaylist.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbPlaylist.Font = new System.Drawing.Font("Segoe Script", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlaylist.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPlaylist.ForeColor = System.Drawing.Color.Black;
             this.lbPlaylist.FormattingEnabled = true;
-            this.lbPlaylist.ItemHeight = 22;
+            this.lbPlaylist.ItemHeight = 20;
             this.lbPlaylist.Location = new System.Drawing.Point(5, 19);
             this.lbPlaylist.Name = "lbPlaylist";
-            this.lbPlaylist.Size = new System.Drawing.Size(147, 334);
+            this.lbPlaylist.Size = new System.Drawing.Size(147, 324);
             this.lbPlaylist.TabIndex = 0;
             this.lbPlaylist.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -161,9 +161,9 @@ namespace RapidAppProject
             this.groupBox1.Controls.Add(this.lbPlaylist);
             this.groupBox1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(346, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(160, 369);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
@@ -175,9 +175,9 @@ namespace RapidAppProject
             this.groupBox2.Controls.Add(this.pb_PlaylistCover);
             this.groupBox2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(9, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(323, 378);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
@@ -188,7 +188,7 @@ namespace RapidAppProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(522, 492);
+            this.ClientSize = new System.Drawing.Size(522, 485);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPrevious);
@@ -198,9 +198,10 @@ namespace RapidAppProject
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_clearPL);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Music Player";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pb_PlaylistCover)).EndInit();
